@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OSK.Petra.Calculators.Inflation.UnitTests/OSK.Petra.Calculators.Inflation.UnitTests.csproj" />
+  <Project Path="OSK.Petra.Calculators.Inflation/OSK.Petra.Calculators.Inflation.csproj" />
+</Solution>
