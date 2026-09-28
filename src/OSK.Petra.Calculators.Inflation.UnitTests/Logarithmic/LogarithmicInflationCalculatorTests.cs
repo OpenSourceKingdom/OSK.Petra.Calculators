@@ -1,8 +1,5 @@
 ﻿using OSK.Petra.Calculators.Inflation.Logarithmic;
 using OSK.Petra.Calculators.Inflation.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OSK.Petra.Calculators.Inflation.UnitTests.Logarithmic;
 

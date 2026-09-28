@@ -1,4 +1,3 @@
-using OSK.Petra.Calculators.Inflation.Ports;
 using System;
 
 namespace OSK.Petra.Calculators.Inflation.Exponential;

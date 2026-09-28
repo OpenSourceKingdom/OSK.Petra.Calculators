@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OSK.Petra.Calculators.Inflation.Models;
+﻿namespace OSK.Petra.Calculators.Inflation.Models;
 
 public enum ScaleFactorMode
 {
