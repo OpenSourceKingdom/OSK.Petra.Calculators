@@ -1,5 +1,4 @@
 ﻿using OSK.Hexagonal.MetaData;
-using OSK.Petra.Calculators.Inflation.Models;
 
 namespace OSK.Petra.Calculators.Inflation.Ports;
 

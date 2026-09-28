@@ -9,7 +9,7 @@ namespace OSK.Extensions.Petra.Calculators.Provisions;
 /// <summary>
 /// A special inflation calculator for collections of provisions
 /// </summary>
-public class ProvisionInflationCalculator
+public class ProvisionInflationCalculator: IProvisionInflationCalculator
 {
     #region Variables
 
@@ -57,14 +57,9 @@ public class ProvisionInflationCalculator
 
     #endregion
 
-    #region IInflationCalculator
+    #region IProvisionInflationCalculator
 
-    /// <summary>
-    /// Inflates the provided provisions based on the
-    /// </summary>
-    /// <param name="baseProvisions">The initial base provisions to be inflated</param>
-    /// <param name="count">The count/iteration for the inflation</param>
-    /// <returns>The inflated provisions</returns>
+    /// <inheritdoc/>
     public IEnumerable<Provision> Inflate(IEnumerable<Provision> baseProvisions, int count)
     {
         if (baseProvisions is null || !baseProvisions.Any())

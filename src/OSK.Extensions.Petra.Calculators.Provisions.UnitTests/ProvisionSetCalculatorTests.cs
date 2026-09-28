@@ -1,7 +1,6 @@
 ﻿using Moq;
 using OSK.Petra.Calculators.Inflation.Ports;
 using OSK.Petra.Provisions.Models;
-using System.Timers;
 
 namespace OSK.Extensions.Petra.Calculators.Provisions.UnitTests;
 

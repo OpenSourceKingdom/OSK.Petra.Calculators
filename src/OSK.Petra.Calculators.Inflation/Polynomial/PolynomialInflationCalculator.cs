@@ -1,5 +1,4 @@
 using OSK.Petra.Calculators.Inflation.Models;
-using OSK.Petra.Calculators.Inflation.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
