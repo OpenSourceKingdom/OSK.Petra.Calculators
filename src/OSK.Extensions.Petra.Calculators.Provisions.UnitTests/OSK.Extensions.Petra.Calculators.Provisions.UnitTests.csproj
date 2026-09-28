@@ -13,11 +13,16 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+		<PackageReference Include="Moq" Version="4.21.0" />
 		<PackageReference Include="xunit.v3" Version="4.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\OSK.Petra.Calculators.Inflation\OSK.Petra.Calculators.Inflation.csproj" />
+	  <ProjectReference Include="..\OSK.Extensions.Petra.Calculators.Provisions\OSK.Extensions.Petra.Calculators.Provisions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
 	</ItemGroup>
 
 	<ItemGroup>
