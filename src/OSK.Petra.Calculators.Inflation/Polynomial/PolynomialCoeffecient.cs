@@ -1,3 +1,8 @@
 namespace OSK.Petra.Calculators.Inflation.Polynomial;
 
-public readonly record struct PolynomialCoeffecient(double Value, int Power);
+/// <summary>
+/// Represents a term of the polynomial equation
+/// </summary>
+/// <param name="Coefficient">The term coeffecient</param>
+/// <param name="Power">The term power</param>
+public readonly record struct PolynomialTerm(double Coefficient, int Power);

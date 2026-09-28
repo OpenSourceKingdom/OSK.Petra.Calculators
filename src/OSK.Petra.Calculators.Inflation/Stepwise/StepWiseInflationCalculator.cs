@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace OSK.Petra.Calculators.Inflation.Stepwise;
 
+/// <summary>
+/// Provides inflation through a step wise function
+/// </summary>
 public class StepWiseInflationCalculator : IInflationCalculator
 {
     #region Variables
@@ -16,14 +19,22 @@ public class StepWiseInflationCalculator : IInflationCalculator
 
     #region Constructors
 
+    /// <summary>
+    /// Creates an inflation calculator using a collection of <see cref="InflationStep"/>
+    /// </summary>
+    /// <param name="steps">The steps for the stepwise inflation</param>
     public StepWiseInflationCalculator(IEnumerable<InflationStep> steps)
     {
-        _steps = steps?.OrderBy(step => step.Quantity).ToArray() ?? [];
+        _steps = steps?.OrderBy(step => step.Count).ToArray() ?? [];
     }
 
+    /// <summary>
+    /// Creates an inflation calculator using a parameter list of <see cref="InflationStep"/>
+    /// </summary>
+    /// <param name="steps">The steps for the stepwise inflation</param>
     public StepWiseInflationCalculator(params InflationStep[] steps)
     {
-        _steps = steps?.OrderBy(step => step.Quantity).ToArray() ?? [];
+        _steps = steps?.OrderBy(step => step.Count).ToArray() ?? [];
     }
 
     #endregion
@@ -38,24 +49,24 @@ public class StepWiseInflationCalculator : IInflationCalculator
         }
 
         var step = _steps[_stepIndex];
-        if (step.Quantity > quantity)
+        if (step.Count > quantity)
         {
-            while (_stepIndex > 0 && _steps[_stepIndex - 1].Quantity >= quantity)
+            while (_stepIndex > 0 && _steps[_stepIndex - 1].Count >= quantity)
             {
                 _stepIndex--;
                 step = _steps[_stepIndex];
             }
         }
-        else if (step.Quantity < quantity)
+        else if (step.Count < quantity)
         {
-            while (_stepIndex < _steps.Length - 1 && _steps[_stepIndex + 1].Quantity <= quantity)
+            while (_stepIndex < _steps.Length - 1 && _steps[_stepIndex + 1].Count <= quantity)
             {
                 _stepIndex++;
                 step = _steps[_stepIndex];
             }
         }
 
-        return step.Quantity > quantity
+        return step.Count > quantity
             ? baseValue
             : step.Value;
     }

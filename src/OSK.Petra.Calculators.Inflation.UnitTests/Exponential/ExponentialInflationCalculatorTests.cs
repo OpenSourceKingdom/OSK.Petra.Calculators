@@ -1,4 +1,5 @@
 using OSK.Petra.Calculators.Inflation.Exponential;
+using OSK.Petra.Calculators.Inflation.Models;
 
 namespace BlankStudios.Games.TowerDefenseLabs.UnitTests.Libraries.OSK.Game.Mechanics.Calculators.Inflation.Internal.Services;
 
@@ -6,18 +7,31 @@ public class ExponentialInflationCalculatorTests
 {
     #region Inflate
 
-    [Fact]
-    public void Inflate_ExponentiallyGrowsAsExpected()
+    [Theory]
+    [InlineData(ScaleFactorMode.Additive)]
+    [InlineData(ScaleFactorMode.Multiplicative)]
+    public void Inflate_AdditiveScaleFactor_ExponentiallyGrowsAsExpected(ScaleFactorMode scaleFactorMode)
     {
         // Arrange
-        var calculator = new ExponentialInflationCalculator(5);
+        var exponent = 5;
+        var calculator = new ExponentialInflationCalculator(exponent)
+        {
+            ScaleFactorMode = scaleFactorMode
+        };
 
         // Act/Assert
         var result = calculator.Inflate(100, 2);
-        Assert.Equal(25 * 100, result);
+
+        var expected = scaleFactorMode is ScaleFactorMode.Additive
+            ? Math.Pow(2, exponent) + 100
+            : Math.Pow(2, exponent) * 100;
+        Assert.Equal(expected, result);
 
         result = calculator.Inflate(5, 4);
-        Assert.Equal(3125, result);
+        expected = scaleFactorMode is ScaleFactorMode.Additive
+            ? Math.Pow(4, exponent) + 5
+            : Math.Pow(4, exponent) * 5;
+        Assert.Equal(expected, result);
     }
 
     #endregion

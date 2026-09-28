@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="OSK.Extensions.Petra.Calculators.Provisions/OSK.Extensions.Petra.Calculators.Provisions.csproj" Id="3fc70c0f-bb61-4f81-a2b3-607d2dc0946e" />
   <Project Path="OSK.Petra.Calculators.Inflation.UnitTests/OSK.Petra.Calculators.Inflation.UnitTests.csproj" />
   <Project Path="OSK.Petra.Calculators.Inflation/OSK.Petra.Calculators.Inflation.csproj" />
 </Solution>

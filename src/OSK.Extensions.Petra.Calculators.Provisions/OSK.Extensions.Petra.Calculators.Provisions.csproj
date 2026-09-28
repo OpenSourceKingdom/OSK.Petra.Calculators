@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>14</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OSK.Petra.Provisions" Version="0.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\OSK.Petra.Calculators.Inflation\OSK.Petra.Calculators.Inflation.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -3,12 +3,17 @@ using System;
 
 namespace OSK.Petra.Calculators.Inflation.Exponential;
 
-public class ExponentialInflationCalculator(double coeffecient) : IInflationCalculator
+/// <summary>
+/// Provides an exponential rate inflation
+/// </summary>
+/// <param name="exponent">The exponent power</param>
+public class ExponentialInflationCalculator(double exponent) : ScaleFactorInflationCalculator
 {
-    #region IInflationCalculator
+    #region ScaleFactorInflationCalculator Overrides
 
-    public double Inflate(double baseValue, int quantity)
-        => baseValue * Math.Pow(coeffecient, quantity);
+    /// <inheritdoc/>
+    protected override double InflateValue(double baseValue, int count)
+        => Math.Pow(count, exponent);
 
     #endregion
 }
